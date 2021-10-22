@@ -31,12 +31,12 @@ function ParDeBarreiras(altura, abertura, x) {
         const alturaSuperior = Math.random() * (altura - abertura)
         const alturaInferior = altura - abertura - alturaSuperior
         this.superior.setAltura(alturaSuperior)
-        this.superior.setAltura(alturaInferior)
+        this.inferior.setAltura(alturaInferior)
     }
 
     this.getX = () => parseInt(this.elemento.style.left.split('px')[0])
     this.setX = x => this.elemento.style.left = `${x}px`
-    this.getLargura = () => this.elemento.clientWhidth
+    this.getLargura = () => this.elemento.clientWidth
 
     this.sortearAbertura()
     this.setX(x)
@@ -173,7 +173,7 @@ function FlappyBird() {
                 if(colidiu(passaro, barreiras)) {
                     clearInterval(temporizador)
                 }
-            }, 20)
+            }, 25)
         }
 }
 
